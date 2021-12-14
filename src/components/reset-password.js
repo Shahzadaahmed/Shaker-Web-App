@@ -149,7 +149,7 @@ const ResetPassword = () => {
         console.log(formObj);
 
         let { email, newpassword, confirmpassword } = formObj;
-        let api = `https://crm.shaker.com.sa/api/customers/SubmitEmailPasswordUpdate?email=${email}&newpassword=${newpassword}&confirmpassword=${confirmpassword}`;
+        let api = `https://crm.shaker.com.sa/api/customers/SubmitEmailPasswordUpdate?email_no=${email}&newpassword=${newpassword}&confirmpassword=${confirmpassword}`;
 
         try {
             let response = await axios.post(api);

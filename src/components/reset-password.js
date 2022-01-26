@@ -154,8 +154,9 @@ const ResetPassword = () => {
         try {
             let response = await axios.post(api);
             console.log(response);
+            let successMessage = response.data.message;
 
-            if (response.data.message === "Password Update Succesfully") {
+            if (successMessage == "Password updated succesfully") {
                 swal({
                     title: "Password Updated",
                     text: "Your password has been updated succesfully",
@@ -226,7 +227,7 @@ const ResetPassword = () => {
 
                         {/* Note: Password field container */}
                         <FormControl fullWidth sx={{ m: 1 }} variant="standard" style={{ marginTop: '0.5em' }}>
-                            <InputLabel htmlFor="standard-adornment-password">Password</InputLabel>
+                            <InputLabel htmlFor="standard-adornment-password">New Password</InputLabel>
                             <Input
                                 id="standard-adornment-password"
                                 type={enablePassword ? 'text' : 'password'}
@@ -254,7 +255,7 @@ const ResetPassword = () => {
 
                         {/* Note: Confirm password field container */}
                         <FormControl fullWidth sx={{ m: 1 }} variant="standard" style={{ marginTop: '0.5em' }}>
-                            <InputLabel htmlFor="standard-adornment-password">Confirm Password</InputLabel>
+                            <InputLabel htmlFor="standard-adornment-password">Confirm New Password</InputLabel>
                             <Input
                                 id="standard-adornment-password"
                                 type={enableConfirmPassword ? 'text' : 'password'}
